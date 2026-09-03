@@ -5,7 +5,8 @@ var player:Player = null
 var next_state:PlayerState = null
 
 #region /// state references
-# reference to all other states
+@onready var idle: PlayerStateIdle = %Idle
+@onready var run: PlayerStateRun = %Run
 #endregion
 
 # What happens when this state is initialized?
