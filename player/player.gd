@@ -1,16 +1,72 @@
 class_name Player extends CharacterBody2D
 
+#region /// State Machine Variables
+var states:Array[PlayerState]
+var current_state:PlayerState : 
+	get : return states.front()
+var previous_state:PlayerState :
+	get : return states[1]
+#endregion
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-const GRAVITY = 980
+#region /// Standard Variables
+var direction:Vector2 = Vector2.ZERO
+var gravity:float = 980.0
+#endregion
 
+func _ready() -> void:
+	initialize_states()
+
+func _unhandled_input(event: InputEvent) -> void:
+	change_state(current_state.handle_input(event))
+
+func _process(delta: float) -> void:
+	update_direction()
+	change_state(current_state.process(delta))
 
 func _physics_process(delta: float) -> void:
-	velocity.x = 0
-	if Input.is_action_pressed("left"):
-		velocity.x = -100
-	elif Input.is_action_pressed("right"):
-		velocity.x = 100
-	velocity.y = velocity.y + GRAVITY * delta
+	velocity.y += gravity * delta
 	move_and_slide()
+	change_state(current_state.physics_process(delta))
+
+func initialize_states() -> void:
+	states = []
+	#gather all the states
+	for c in $States.get_children():
+		if c is PlayerState:
+			states.append(c)
+			c.player = self
+	
+	if states.size() == 0:
+		return
+	
+	#initialize all the states
+	for state in states:
+		state.init()
+	
+	#set our first state
+	change_state(current_state)
+	current_state.enter()
+
+
+func change_state(new_state:PlayerState) -> void:
+	#fail safes
+	if new_state == null:
+		return
+	elif new_state == current_state:
+		return
+	
+	#exit the current state
+	if current_state:
+		current_state.exit()
+	
+	#enter the new state
+	states.push_front(new_state)
+	current_state.enter()
+	states.resize(3)
+
+func update_direction() -> void:
+	#var prev_direction:Vector2 = direction
+	
+	direction = Input.get_vector("left", "right", "up", "down")
+	
+	#do more stuff?
