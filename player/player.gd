@@ -17,6 +17,7 @@ var previous_state:PlayerState :
 #region /// Standard Variables
 var direction:Vector2 = Vector2.ZERO
 var gravity:float = 980.0
+var gravity_multiplier:float = 1.0
 #endregion
 
 func _ready() -> void:
@@ -30,7 +31,7 @@ func _process(delta: float) -> void:
 	change_state(current_state.process(delta))
 
 func _physics_process(delta: float) -> void:
-	velocity.y += gravity * delta
+	velocity.y += gravity * delta * gravity_multiplier
 	move_and_slide()
 	change_state(current_state.physics_process(delta))
 	$Label.text = current_state.name
