@@ -6,7 +6,10 @@ func init() -> void:
 
 # What happens when this state is entered?
 func enter() -> void:
-	pass
+	if player.previous_state == run:
+		player.animation_player.play("idle")
+	else:
+		player.animation_player.queue("idle")
 
 # What happens when this state is exited?
 func exit() -> void:

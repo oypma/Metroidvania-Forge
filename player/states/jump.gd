@@ -8,7 +8,7 @@ func init() -> void:
 
 # What happens when this state is entered?
 func enter() -> void:
-	# Play animation
+	player.animation_player.play("jump")
 	player.add_debug_indicator(Color.LIME_GREEN)
 	player.velocity.y = -jump_velocity
 	pass

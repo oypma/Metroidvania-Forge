@@ -6,8 +6,7 @@ func init() -> void:
 
 # What happens when this state is entered?
 func enter() -> void:
-	# Play animation
-	pass
+	player.animation_player.play("run")
 
 # What happens when this state is exited?
 func exit() -> void:
