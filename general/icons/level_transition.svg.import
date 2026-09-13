@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfvplwvg5tfqq"
-path="res://.godot/imported/level_bounds.svg-cdd5458803d3661b5e2ef3e9bbdaa661.ctex"
+uid="uid://demd0pbcu6wbr"
+path="res://.godot/imported/level_transition.svg-b546bfd71d2ad72287c58dd393c8aae9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ch_02_world_building_foundations/level_bounds.svg"
-dest_files=["res://.godot/imported/level_bounds.svg-cdd5458803d3661b5e2ef3e9bbdaa661.ctex"]
+source_file="res://general/icons/level_transition.svg"
+dest_files=["res://.godot/imported/level_transition.svg-b546bfd71d2ad72287c58dd393c8aae9.ctex"]
 
 [params]
 

@@ -173,3 +173,5 @@ collision_mask = 2
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1740019834]
 libraries/ = SubResource("AnimationLibrary_rgyib")
 autoplay = &"idle"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=69164732]

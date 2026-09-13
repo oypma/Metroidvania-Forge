@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://msyko63jdror"
-path="res://.godot/imported/player_spawn.svg-e74534920e9280fd652137291a1a9dd1.ctex"
+path="res://.godot/imported/player_spawn.svg-80aeb344cdf946d5c970a5f2eca99081.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ch_02_world_building_foundations/player_spawn.svg"
-dest_files=["res://.godot/imported/player_spawn.svg-e74534920e9280fd652137291a1a9dd1.ctex"]
+source_file="res://general/icons/player_spawn.svg"
+dest_files=["res://.godot/imported/player_spawn.svg-80aeb344cdf946d5c970a5f2eca99081.ctex"]
 
 [params]
 

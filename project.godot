@@ -26,6 +26,7 @@ window/stretch/mode="canvas_items"
 [file_customization]
 
 folder_colors={
+"res://general/": "purple",
 "res://levels/": "orange",
 "res://player/": "green"
 }
