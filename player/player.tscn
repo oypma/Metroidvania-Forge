@@ -35,7 +35,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_hg6s5"]
 resource_name = "crouch"
-length = 0.19999999999999998
+length = 0.2
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -109,6 +109,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=400185542]
+z_index = 1
 collision_layer = 0
 collision_mask = 3
 floor_constant_speed = true
