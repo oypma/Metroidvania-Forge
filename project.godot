@@ -15,6 +15,10 @@ run/main_scene="uid://cilmdg5tpbdkk"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://bn3bmyqingnk6"
 
+[autoload]
+
+SceneManager="*uid://crexy2y1bn4gq"
+
 [display]
 
 window/size/viewport_width=480
@@ -26,10 +30,15 @@ window/stretch/mode="canvas_items"
 [file_customization]
 
 folder_colors={
+"res://00_global/": "pink",
 "res://general/": "purple",
 "res://levels/": "orange",
 "res://player/": "green"
 }
+
+[global_group]
+
+Player=""
 
 [input]
 
@@ -83,6 +92,7 @@ action={
 
 2d_physics/layer_1="Ground"
 2d_physics/layer_2="One Way Platform"
+2d_physics/layer_5="Player"
 
 [physics]
 

@@ -2,12 +2,13 @@
 
 [ext_resource type="TileSet" uid="uid://jl8xm6vayrxi" path="res://levels/tilesets/forgotten_forest.tres" id="1_5wgas"]
 [ext_resource type="Script" uid="uid://cvlapi3fdifvt" path="res://general/scripts/level_bounds.gd" id="2_uqe0m"]
-[ext_resource type="PackedScene" uid="uid://cfa3xni5hj64u" path="res://player/player.tscn" id="3_epyyu"]
+[ext_resource type="PackedScene" uid="uid://coi0vcyvfj31x" path="res://general/level_transition/level_transition.tscn" id="3_epyyu"]
 
 [node name="02" type="Node2D" unique_id=1429143687]
 
 [node name="TileMapBackground" type="TileMapLayer" parent="." unique_id=682921934]
 modulate = Color(0.40061608, 0.51679397, 0.61157066, 1)
+tile_map_data = PackedByteArray("AAABAAcAAAABAAgAAAABAAgAAAABAAkAAAABAAkAAAABAAoAAAACAAcAAAACAAgAAAACAAgAAAACAAkAAAACAAkAAAACAAoAAAADAAcAAAACAAgAAAADAAgAAAACAAkAAAADAAkAAAACAAoAAAAEAAcAAAADAAgAAAAEAAgAAAADAAkAAAAEAAkAAAADAAoAAAAFAAcAAAADAAgAAAAFAAgAAAADAAkAAAAFAAkAAAADAAoAAAAGAAcAAAADAAgAAAAGAAgAAAADAAkAAAAGAAkAAAADAAoAAAAAAAcAAAAAAAgAAAAAAAgAAAAAAAkAAAAAAAkAAAAAAAoAAAAHAAcAAAAEAAgAAAAHAAgAAAAEAAkAAAAHAAkAAAAEAAoAAAAIAAcAAAAFAAgAAAAIAAgAAAAFAAkAAAAIAAkAAAAFAAoAAAA=")
 tile_set = ExtResource("1_5wgas")
 collision_enabled = false
 
@@ -17,7 +18,7 @@ tile_set = ExtResource("1_5wgas")
 collision_enabled = false
 
 [node name="TileMap" type="TileMapLayer" parent="." unique_id=1229934065]
-tile_map_data = PackedByteArray("AAACAAcAAAASAAYAAAADAAcAAAARAAYAAAAEAAcAAAASAAYAAAAFAAcAAAASAAYAAAAbAP7/AAAQAAYAAAAcAP7/AAARAAYAAAAdAP7/AAASAAYAAAAeAP7/AAATAAYAAAANAAgAAAAQAAYAAAAOAAgAAAARAAYAAAAPAAgAAAASAAYAAAARAAgAAAATAAYAAAAQAAgAAAASAAYAAAABAAcAAAAQAAYAAAAGAAcAAAATAAYAAAA=")
+tile_map_data = PackedByteArray("AAANAAgAAAAQAAYAAAAOAAgAAAARAAYAAAAPAAgAAAASAAYAAAARAAgAAAATAAYAAAAQAAgAAAASAAYAAAAaAP//AAAQAAYAAAAbAP//AAATAAYAAAAAAAgAAAAQAAYAAAABAAgAAAARAAYAAAACAAgAAAARAAYAAAADAAgAAAARAAYAAAAEAAgAAAARAAYAAAAFAAgAAAARAAYAAAAGAAgAAAATAAYAAAA=")
 tile_set = ExtResource("1_5wgas")
 
 [node name="TileMapAuto" type="TileMapLayer" parent="." unique_id=819984813]
@@ -32,5 +33,30 @@ width = 1280
 height = 430
 metadata/_custom_type_script = "uid://cvlapi3fdifvt"
 
-[node name="Player" parent="." unique_id=400185542 instance=ExtResource("3_epyyu")]
-position = Vector2(-5, 189)
+[node name="LevelTransition" parent="." unique_id=424073602 instance=ExtResource("3_epyyu")]
+position = Vector2(-32, 192)
+size = 22
+location = 0
+target_level = "uid://cilmdg5tpbdkk"
+target_area_name = "LevelTransition"
+
+[node name="LevelTransition2" parent="." unique_id=862072711 instance=ExtResource("3_epyyu")]
+position = Vector2(32, 272)
+size = 6
+location = 3
+target_level = "uid://ibxxfvg4yw2c"
+target_area_name = "LevelTransition"
+
+[node name="LevelTransition3" parent="." unique_id=1903660848 instance=ExtResource("3_epyyu")]
+position = Vector2(672, -200)
+size = 5
+location = 2
+target_level = "uid://buhwrv3w1537k"
+target_area_name = "LevelTransition"
+
+[node name="LevelTransition4" parent="." unique_id=289193143 instance=ExtResource("3_epyyu")]
+position = Vector2(416, 272)
+size = 5
+location = 3
+target_level = "uid://ibxxfvg4yw2c"
+target_area_name = "LevelTransition2"
