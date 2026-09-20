@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dashjdsov4kli"]
+
+[ext_resource type="Script" uid="uid://dpumju41tr7k3" path="res://levels/tutorial/tutorial_manager.gd" id="1_847ju"]
+
+[node name="TutorialManager" type="Node2D" unique_id=27344361]
+script = ExtResource("1_847ju")

@@ -1,0 +1,83 @@
+[gd_scene format=4 uid="uid://gvgl7tnsh0cx"]
+
+[ext_resource type="TileSet" uid="uid://jl8xm6vayrxi" path="res://levels/tilesets/forgotten_forest.tres" id="1_f3ams"]
+[ext_resource type="Script" uid="uid://cvlapi3fdifvt" path="res://general/scripts/level_bounds.gd" id="2_4g1xg"]
+[ext_resource type="PackedScene" uid="uid://cfa3xni5hj64u" path="res://player/player.tscn" id="3_ypsce"]
+[ext_resource type="PackedScene" uid="uid://dashjdsov4kli" path="res://levels/tutorial/tutorial_manager.tscn" id="4_0jtug"]
+[ext_resource type="PackedScene" uid="uid://26xrr8bafba0" path="res://levels/tutorial/tutorial_node.tscn" id="5_cui05"]
+
+[node name="Tutorial" type="Node2D" unique_id=1837675602]
+
+[node name="TileMapAuto" type="TileMapLayer" parent="." unique_id=1090449258]
+tile_map_data = PackedByteArray("AAAAAAAAAAAQAAEAAAAAAAEAAAAXAAQAAAAAAAIAAAAXAAQAAAAAAAMAAAAXAAQAAAAAAAQAAAAXAAQAAAAAAAUAAAAXAAQAAAAAAAYAAAAXAAQAAAAAAAcAAAAQAAUAAAABAAcAAAARAAUAAAACAAcAAAARAAUAAAADAAcAAAARAAUAAAAEAAcAAAARAAUAAAAFAAcAAAARAAUAAAAGAAcAAAARAAUAAAAHAAcAAAARAAUAAAAIAAcAAAARAAUAAAAJAAcAAAARAAUAAAAKAAcAAAARAAUAAAALAAcAAAARAAUAAAAMAAcAAAARAAUAAAANAAcAAAARAAUAAAAOAAcAAAAXAAUAAAAOAAAAAAAXAAEAAAAOAAEAAAAXAAQAAAAOAAQAAAAXAAQAAAAOAAUAAAAXAAQAAAAOAAYAAAAXAAQAAAAOAAMAAAAXAAQAAAAOAAIAAAAXAAQAAAANAAAAAAARAAUAAAAMAAAAAAARAAUAAAALAAAAAAARAAUAAAAKAAAAAAARAAUAAAAJAAAAAAARAAUAAAAGAAAAAAARAAUAAAAFAAAAAAARAAUAAAAEAAAAAAARAAUAAAADAAAAAAARAAUAAAACAAAAAAARAAUAAAABAAAAAAARAAUAAAAIAAAAAAARAAUAAAAHAAAAAAARAAUAAAA=")
+tile_set = ExtResource("1_f3ams")
+
+[node name="TileMap" type="TileMapLayer" parent="." unique_id=858379174]
+tile_map_data = PackedByteArray("AAAFAAQAAAAQAAYAAAAGAAQAAAARAAYAAAAHAAQAAAASAAYAAAAIAAQAAAATAAYAAAAQAAIAAAAQAAYAAAARAAIAAAARAAYAAAASAAIAAAASAAYAAAATAAIAAAATAAYAAAAQAAQAAAATAA0AAAAQAAUAAAATAA4AAAAQAAYAAAATAA8AAAARAAQAAAAUAA0AAAARAAUAAAAUAA4AAAARAAYAAAAUAA8AAAASAAQAAAAVAA0AAAASAAUAAAAVAA4AAAASAAYAAAAVAA8AAAATAAQAAAAWAA0AAAATAAUAAAAWAA4AAAATAAYAAAAWAA8AAAA=")
+tile_set = ExtResource("1_f3ams")
+
+[node name="LevelBounds" type="Node2D" parent="." unique_id=24660179]
+z_index = 256
+script = ExtResource("2_4g1xg")
+width = 704
+metadata/_custom_type_script = "uid://cvlapi3fdifvt"
+
+[node name="Player" parent="." unique_id=400185542 instance=ExtResource("3_ypsce")]
+position = Vector2(64, 208)
+
+[node name="TutorialManager" parent="." unique_id=27344361 instance=ExtResource("4_0jtug")]
+
+[node name="Welcome!" parent="TutorialManager" unique_id=1359410521 instance=ExtResource("5_cui05")]
+visible = false
+offset_right = 97.0
+offset_bottom = 40.0
+tutorial_text = "Hello! Welcome to the tutorial! <tab>"
+actions_to_press = Array[String](["continue"])
+
+[node name="Movement" parent="TutorialManager" unique_id=1308501488 instance=ExtResource("5_cui05")]
+visible = false
+offset_right = 97.0
+offset_bottom = 40.0
+tutorial_text = "Press A-D and arrows to move"
+actions_to_press = Array[String](["left", "right"])
+
+[node name="Jump" parent="TutorialManager" unique_id=1474287013 instance=ExtResource("5_cui05")]
+visible = false
+offset_right = 97.0
+offset_bottom = 40.0
+tutorial_text = "Press Space or Z to jump!"
+actions_to_press = Array[String](["jump"])
+
+[node name="Crouch" parent="TutorialManager" unique_id=1828379066 instance=ExtResource("5_cui05")]
+visible = false
+offset_right = 97.0
+offset_bottom = 40.0
+tutorial_text = "Press S or down arrow to crouch"
+actions_to_press = Array[String](["down"])
+
+[node name="OneWay" parent="TutorialManager" unique_id=1334123288 instance=ExtResource("5_cui05")]
+visible = false
+offset_right = 97.0
+offset_bottom = 57.0
+tutorial_text = "When crouching on a one way platform, press jump to fall through it. <tab>"
+actions_to_press = Array[String](["continue"])
+
+[node name="OneWaySeeThem" parent="TutorialManager" unique_id=207663242 instance=ExtResource("5_cui05")]
+visible = false
+offset_right = 97.0
+offset_bottom = 40.0
+tutorial_text = "Go to the right to see some of the one way platforms. <tab>"
+actions_to_press = Array[String](["continue"])
+
+[node name="Finished" parent="TutorialManager" unique_id=784058934 instance=ExtResource("5_cui05")]
+offset_right = 97.0
+offset_bottom = 40.0
+tutorial_text = "Congrats! You finished the tutorial!"
+actions_to_press = Array[String]([])
+
+[node name="Label" type="Label" parent="." unique_id=112465144]
+offset_left = 488.0
+offset_top = 16.0
+offset_right = 642.0
+offset_bottom = 39.0
+text = "One Way Platforms:"
