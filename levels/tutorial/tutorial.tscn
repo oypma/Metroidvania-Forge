@@ -48,6 +48,13 @@ offset_bottom = 40.0
 tutorial_text = "Press Space or Z to jump!"
 actions_to_press = Array[String](["jump"])
 
+[node name="TutorialNode" parent="TutorialManager" unique_id=1224654748 instance=ExtResource("5_cui05")]
+visible = false
+offset_right = 97.0
+offset_bottom = 40.0
+tutorial_text = "Release jump to get a variable jump height <tab>"
+actions_to_press = Array[String](["continue"])
+
 [node name="Crouch" parent="TutorialManager" unique_id=1828379066 instance=ExtResource("5_cui05")]
 visible = false
 offset_right = 97.0
@@ -65,9 +72,9 @@ actions_to_press = Array[String](["continue"])
 [node name="OneWaySeeThem" parent="TutorialManager" unique_id=207663242 instance=ExtResource("5_cui05")]
 visible = false
 offset_right = 97.0
-offset_bottom = 40.0
-tutorial_text = "Go to the right to see some of the one way platforms. <tab>"
-actions_to_press = Array[String](["continue"])
+offset_bottom = 42.0
+tutorial_text = "Go to the right to see some of the one way platforms. <space>"
+actions_to_press = Array[String](["jump"])
 
 [node name="Finished" parent="TutorialManager" unique_id=784058934 instance=ExtResource("5_cui05")]
 offset_right = 97.0

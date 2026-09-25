@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://dybjdc4km7t6x" path="res://levels/tilesets/sprites/forgotten_forest_example_tileset.png" id="1_uh0r3"]
 
+[sub_resource type="TileMapPattern" id="TileMapPattern_uh0r3"]
+tile_data = PackedInt32Array(0, 1507328, 9, 65536, 1507328, 10, 131072, 1507328, 11, 196608, 1507328, 12, 262144, 1507328, 13, 1, 1572864, 9, 65537, 1572864, 10, 131073, 1572864, 11, 196609, 1572864, 12, 262145, 1572864, 13, 327681, 1572864, 14, 393217, 1572864, 15, 65538, 1638400, 10, 131074, 1638400, 11, 196610, 1638400, 12, 262146, 1638400, 13)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fcive"]
 texture = ExtResource("1_uh0r3")
 texture_region_size = Vector2i(32, 32)
@@ -1208,3 +1211,4 @@ terrain_set_0/terrain_0/color = Color(0.23841786, 1, 0, 1)
 terrain_set_0/terrain_1/name = "Stone Terrain"
 terrain_set_0/terrain_1/color = Color(0.09731817, 0, 1, 1)
 sources/0 = SubResource("TileSetAtlasSource_fcive")
+pattern_0 = SubResource("TileMapPattern_uh0r3")
