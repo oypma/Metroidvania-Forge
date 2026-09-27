@@ -63,8 +63,15 @@ collision_enabled = false
 
 [node name="TileMapProps" type="TileMapLayer" parent="." unique_id=931252417]
 position = Vector2(0, 4)
+tile_map_data = PackedByteArray("AAAQAAQAAQAAAAAAAQAUAAQAAQAAAAAAAQABAP//AQAAAAAAAQAFAAEAAQAAAAAAAQABAAMAAQAAAAAAAQAHAP7/AQAAAAAAAQAOAAIAAQAAAAAAAQAZAAEAAQAAAAAAAQAdAAAAAQAAAAAAAQAiAP3/AQAAAAAAAQAlAP//AQAAAAAAAQAkAAMAAQAAAAAAAQA=")
 tile_set = ExtResource("1_rlhhg")
 collision_enabled = false
+
+[node name="TileMapPropsBackground" type="TileMapLayer" parent="." unique_id=1884902560]
+modulate = Color(0.52156866, 0.57254905, 0.63529414, 1)
+position = Vector2(0, 4)
+tile_map_data = PackedByteArray("AAADAP7/AQAAAAAAAQAGAP3/AQAAAAAAAQALAAEAAQAAAAAAAQAWAAEAAQAAAAAAAQAgAAEAAQAAAAAAAQAiAAMAAQAAAAAAAQAHAAMAAQAAAAAAAQA=")
+tile_set = ExtResource("1_rlhhg")
 
 [node name="TileMap" type="TileMapLayer" parent="." unique_id=125773273]
 tile_map_data = PackedByteArray("AAARAAcAAAAQAAYAAAASAAcAAAARAAYAAAATAAcAAAASAAYAAAAUAAcAAAATAAYAAAA=")

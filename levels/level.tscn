@@ -69,6 +69,11 @@ position = Vector2(0, 4)
 tile_set = ExtResource("1_hjsbj")
 collision_enabled = false
 
+[node name="TileMapPropsBackground" type="TileMapLayer" parent="." unique_id=363068911]
+modulate = Color(0.52156866, 0.57254905, 0.63529414, 1)
+position = Vector2(0, 4)
+tile_set = ExtResource("1_hjsbj")
+
 [node name="TileMap" type="TileMapLayer" parent="." unique_id=83339791]
 tile_set = ExtResource("1_hjsbj")
 
