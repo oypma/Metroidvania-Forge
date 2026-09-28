@@ -70,13 +70,13 @@ tutorial_text = "When crouching on a one way platform, press jump to fall throug
 actions_to_press = Array[String](["continue"])
 
 [node name="OneWaySeeThem" parent="TutorialManager" unique_id=207663242 instance=ExtResource("5_cui05")]
-visible = false
 offset_right = 97.0
 offset_bottom = 42.0
 tutorial_text = "Go to the right to see some of the one way platforms. <space>"
 actions_to_press = Array[String](["jump"])
 
 [node name="Finished" parent="TutorialManager" unique_id=784058934 instance=ExtResource("5_cui05")]
+visible = false
 offset_right = 97.0
 offset_bottom = 40.0
 tutorial_text = "Congrats! You finished the tutorial!"

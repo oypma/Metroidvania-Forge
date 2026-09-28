@@ -44,3 +44,7 @@ size = 4
 location = 2
 target_level = "uid://cc0jawhlxy1go"
 target_area_name = "LevelTransition4"
+
+[node name="DarkenerLight" type="DirectionalLight2D" parent="." unique_id=1445350458]
+color = Color(0.09047016, 0.11856222, 0.093591504, 1)
+blend_mode = 2

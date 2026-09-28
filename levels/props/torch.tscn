@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b3c1xq1cvkdkd"]
 
 [ext_resource type="Texture2D" uid="uid://dybjdc4km7t6x" path="res://levels/tilesets/sprites/forgotten_forest_example_tileset.png" id="1_cxyc4"]
+[ext_resource type="Script" uid="uid://bkik6gsn62urj" path="res://general/scripts/light_flicker.gd" id="2_dnf12"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dnf12"]
 atlas = ExtResource("1_cxyc4")
@@ -45,25 +46,25 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_6e1w6"]
-offsets = PackedFloat32Array(0.11445783, 0.25301206, 0.40361446, 0.560241, 0.6807229)
-colors = PackedColorArray(1, 1, 1, 1, 0.7827901, 0.63302636, 0.1288455, 1, 1, 0.5146135, 0, 1, 0.84855527, 0.27497485, 0.08386498, 1, 0, 0, 0, 1)
+[sub_resource type="Gradient" id="Gradient_cxyc4"]
+offsets = PackedFloat32Array(0, 0.39156628, 0.76506025, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.7821765, 0, 1, 0.5328826, 0.19273064, 0, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_lwskc"]
-gradient = SubResource("Gradient_6e1w6")
-width = 128
-height = 128
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dnf12"]
+gradient = SubResource("Gradient_cxyc4")
+width = 256
+height = 256
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(1, 1)
+fill_to = Vector2(1, 0.5)
 
 [node name="Torch" type="AnimatedSprite2D" unique_id=1710255089]
 sprite_frames = SubResource("SpriteFrames_a7of6")
 autoplay = "default"
 frame = 2
-frame_progress = 0.86656165
+frame_progress = 0.4604932
 offset = Vector2(0, -14)
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=247766354]
-position = Vector2(0, -10)
-texture = SubResource("GradientTexture2D_lwskc")
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1236279692]
+texture = SubResource("GradientTexture2D_dnf12")
+script = ExtResource("2_dnf12")

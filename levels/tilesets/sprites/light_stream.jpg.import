@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mfo2vrlcpib4"
-path="res://.godot/imported/autotile_template.png-46a9e9cce4640c3fddd444ae5c009351.ctex"
+uid="uid://blkwmdbr6wsr8"
+path="res://.godot/imported/light_stream.jpg-1f7bd4342dff9c1614a2f800765ec906.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ch_02_world_building_foundations/autotile_template.png"
-dest_files=["res://.godot/imported/autotile_template.png-46a9e9cce4640c3fddd444ae5c009351.ctex"]
+source_file="res://levels/tilesets/sprites/light_stream.jpg"
+dest_files=["res://.godot/imported/light_stream.jpg-1f7bd4342dff9c1614a2f800765ec906.ctex"]
 
 [params]
 
