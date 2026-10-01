@@ -2,6 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://jl8xm6vayrxi" path="res://levels/tilesets/forgotten_forest.tres" id="1_hjsbj"]
 [ext_resource type="Script" uid="uid://cvlapi3fdifvt" path="res://general/scripts/level_bounds.gd" id="2_cwqvt"]
+[ext_resource type="Material" uid="uid://l4p5rfj3wr28" path="res://materials_and_shaders/fog_fade_material.tres" id="3_5mrsh"]
 [ext_resource type="Texture2D" uid="uid://blkwmdbr6wsr8" path="res://levels/tilesets/sprites/light_stream.jpg" id="3_cwqvt"]
 
 [sub_resource type="Gradient" id="Gradient_hjsbj"]
@@ -14,9 +15,58 @@ height = 256
 fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 0)
 
+[sub_resource type="Gradient" id="Gradient_qmxb0"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vd21q"]
+frequency = 0.0062
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_safpt"]
+noise = SubResource("FastNoiseLite_vd21q")
+color_ramp = SubResource("Gradient_qmxb0")
+seamless = true
+normalize = false
+seamless_blend_skirt = 0.3
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5mrsh"]
 blend_mode = 1
 light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_safpt"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_chwhs"]
+colors = PackedColorArray(1.328688, 1.8247963, 0.99329084, 1, 0.72156864, 1, 0.53333336, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gjl0y"]
+gradient = SubResource("Gradient_chwhs")
+width = 16
+height = 16
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Gradient" id="Gradient_vnv7o"]
+offsets = PackedFloat32Array(0, 0.37704918, 0.6803279, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_chwhs"]
+gradient = SubResource("Gradient_vnv7o")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d5x7l"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(600, 200, 1)
+direction = Vector3(0, 0, 0)
+initial_velocity_max = 300.0
+gravity = Vector3(0, 10, 0)
+scale_min = 0.75
+scale_max = 1.25
+color_ramp = SubResource("GradientTexture1D_chwhs")
+hue_variation_min = -2.2351742e-08
+hue_variation_max = 0.049999975
+turbulence_enabled = true
+turbulence_influence_max = 0.19000001
 
 [node name="Level" type="Node2D" unique_id=1585732999]
 
@@ -69,20 +119,22 @@ position = Vector2(608, 104)
 scale = Vector2(5, 1.375)
 texture = SubResource("GradientTexture2D_hjsbj")
 
-[node name="TileMapProps" type="TileMapLayer" parent="." unique_id=220207676]
+[node name="LevelTilemaps" type="Node2D" parent="." unique_id=588114410]
+
+[node name="TileMapProps" type="TileMapLayer" parent="LevelTilemaps" unique_id=220207676]
 position = Vector2(0, 4)
 tile_set = ExtResource("1_hjsbj")
 collision_enabled = false
 
-[node name="TileMapPropsBackground" type="TileMapLayer" parent="." unique_id=363068911]
+[node name="TileMapPropsBackground" type="TileMapLayer" parent="LevelTilemaps" unique_id=363068911]
 modulate = Color(0.52156866, 0.57254905, 0.63529414, 1)
 position = Vector2(0, 4)
 tile_set = ExtResource("1_hjsbj")
 
-[node name="TileMap" type="TileMapLayer" parent="." unique_id=83339791]
+[node name="TileMap" type="TileMapLayer" parent="LevelTilemaps" unique_id=83339791]
 tile_set = ExtResource("1_hjsbj")
 
-[node name="TileMapAuto" type="TileMapLayer" parent="." unique_id=1873354521]
+[node name="TileMapAuto" type="TileMapLayer" parent="LevelTilemaps" unique_id=1873354521]
 tile_set = ExtResource("1_hjsbj")
 
 [node name="LevelBounds" type="Node2D" parent="." unique_id=2058802309]
@@ -93,42 +145,27 @@ width = 1280
 height = 398
 metadata/_custom_type_script = "uid://cvlapi3fdifvt"
 
-[node name="Foreground3" type="Node2D" parent="." unique_id=982414939]
+[node name="Foreground" type="Node2D" parent="." unique_id=982414939]
 z_index = 10
 
-[node name="Foreground" type="Parallax2D" parent="Foreground3" unique_id=2095920056]
-modulate = Color(0, 0, 0, 1)
-z_index = 10
-scroll_scale = Vector2(1.4, 1)
+[node name="FogParallax" type="Parallax2D" parent="Foreground" unique_id=354717384]
+z_index = 5
+scroll_scale = Vector2(1.2, 1.1)
+repeat_size = Vector2(512, 0)
+autoscroll = Vector2(-25, 0)
+repeat_times = 2
 
-[node name="TileMapLayer" type="TileMapLayer" parent="Foreground3/Foreground" unique_id=415207513]
-tile_set = ExtResource("1_hjsbj")
-collision_enabled = false
+[node name="FogSprite" type="Sprite2D" parent="Foreground/FogParallax" unique_id=1068347373]
+modulate = Color(0.8117647, 0.9411765, 0.8901961, 0.8156863)
+material = ExtResource("3_5mrsh")
+position = Vector2(552, 192.00002)
+scale = Vector2(1, 0.625)
+texture = SubResource("NoiseTexture2D_safpt")
 
-[node name="TileMapLayerProps" type="TileMapLayer" parent="Foreground3/Foreground" unique_id=1379452719]
-position = Vector2(0, 8)
-tile_set = ExtResource("1_hjsbj")
-collision_enabled = false
-
-[node name="Foreground2" type="Parallax2D" parent="Foreground3" unique_id=943441083]
-modulate = Color(0, 0, 0, 1)
-z_index = 10
-scroll_scale = Vector2(1.6, 1)
-
-[node name="TileMapLayer" type="TileMapLayer" parent="Foreground3/Foreground2" unique_id=1103411652]
-position = Vector2(48, 48)
-tile_set = ExtResource("1_hjsbj")
-collision_enabled = false
-
-[node name="TileMapLayerCover" type="TileMapLayer" parent="Foreground3/Foreground2" unique_id=791940642]
-position = Vector2(48, 48)
-tile_set = ExtResource("1_hjsbj")
-collision_enabled = false
-
-[node name="LightClose" type="Parallax2D" parent="." unique_id=1942853514]
+[node name="LightClose" type="Parallax2D" parent="Foreground" unique_id=1942853514]
 scroll_scale = Vector2(1.1, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="LightClose" unique_id=352643155]
+[node name="Sprite2D" type="Sprite2D" parent="Foreground/LightClose" unique_id=352643155]
 modulate = Color(1.1638972, 0.9554805, 0.3664772, 0.2509804)
 z_index = 4
 material = SubResource("CanvasItemMaterial_5mrsh")
@@ -137,7 +174,7 @@ rotation = 0.23957878
 texture = ExtResource("3_cwqvt")
 offset = Vector2(0, 256)
 
-[node name="Sprite2D3" type="Sprite2D" parent="LightClose" unique_id=1218665389]
+[node name="Sprite2D3" type="Sprite2D" parent="Foreground/LightClose" unique_id=1218665389]
 modulate = Color(1.1638972, 0.9554805, 0.3664772, 0.2509804)
 z_index = 4
 material = SubResource("CanvasItemMaterial_5mrsh")
@@ -146,7 +183,7 @@ rotation = -0.17533508
 texture = ExtResource("3_cwqvt")
 offset = Vector2(0, 256)
 
-[node name="Sprite2D2" type="Sprite2D" parent="LightClose" unique_id=595802880]
+[node name="Sprite2D2" type="Sprite2D" parent="Foreground/LightClose" unique_id=595802880]
 modulate = Color(1.1638972, 0.9554805, 0.3664772, 0.2509804)
 z_index = 4
 material = SubResource("CanvasItemMaterial_5mrsh")
@@ -156,10 +193,10 @@ scale = Vector2(0.4832554, 1)
 texture = ExtResource("3_cwqvt")
 offset = Vector2(0, 256)
 
-[node name="LightFar" type="Parallax2D" parent="." unique_id=1621964458]
+[node name="LightFar" type="Parallax2D" parent="Foreground" unique_id=1621964458]
 scroll_scale = Vector2(1.2, 1)
 
-[node name="Sprite2D4" type="Sprite2D" parent="LightFar" unique_id=1608367845]
+[node name="Sprite2D4" type="Sprite2D" parent="Foreground/LightFar" unique_id=1608367845]
 modulate = Color(1.1638972, 0.9554805, 0.3664772, 0.06666667)
 z_index = 4
 material = SubResource("CanvasItemMaterial_5mrsh")
@@ -169,7 +206,7 @@ scale = Vector2(1.08574, 1)
 texture = ExtResource("3_cwqvt")
 offset = Vector2(0, 256)
 
-[node name="Sprite2D5" type="Sprite2D" parent="LightFar" unique_id=1626758541]
+[node name="Sprite2D5" type="Sprite2D" parent="Foreground/LightFar" unique_id=1626758541]
 modulate = Color(1.1638972, 0.9554805, 0.3664772, 0.06666667)
 z_index = 4
 material = SubResource("CanvasItemMaterial_5mrsh")
@@ -179,7 +216,7 @@ scale = Vector2(1.08574, 1)
 texture = ExtResource("3_cwqvt")
 offset = Vector2(0, 256)
 
-[node name="Sprite2D6" type="Sprite2D" parent="LightFar" unique_id=380383958]
+[node name="Sprite2D6" type="Sprite2D" parent="Foreground/LightFar" unique_id=380383958]
 modulate = Color(1.1638972, 0.9554805, 0.3664772, 0.06666667)
 z_index = 4
 material = SubResource("CanvasItemMaterial_5mrsh")
@@ -189,7 +226,46 @@ scale = Vector2(1.08574, 1)
 texture = ExtResource("3_cwqvt")
 offset = Vector2(0, 256)
 
+[node name="Foreground" type="Parallax2D" parent="Foreground" unique_id=2095920056]
+modulate = Color(0, 0, 0, 1)
+z_index = 10
+scroll_scale = Vector2(1.4, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Foreground/Foreground" unique_id=415207513]
+tile_set = ExtResource("1_hjsbj")
+collision_enabled = false
+
+[node name="TileMapLayerProps" type="TileMapLayer" parent="Foreground/Foreground" unique_id=1379452719]
+position = Vector2(0, 8)
+tile_set = ExtResource("1_hjsbj")
+collision_enabled = false
+
+[node name="Foreground2" type="Parallax2D" parent="Foreground" unique_id=943441083]
+modulate = Color(0, 0, 0, 1)
+z_index = 10
+scroll_scale = Vector2(1.6, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Foreground/Foreground2" unique_id=1103411652]
+position = Vector2(48, 48)
+tile_set = ExtResource("1_hjsbj")
+collision_enabled = false
+
+[node name="TileMapLayerCover" type="TileMapLayer" parent="Foreground/Foreground2" unique_id=791940642]
+position = Vector2(48, 48)
+tile_set = ExtResource("1_hjsbj")
+collision_enabled = false
+
 [node name="DarkenerLight" type="DirectionalLight2D" parent="." unique_id=2060087484]
 color = Color(0.2901961, 0.41960785, 0.36078432, 1)
 energy = 0.6
 blend_mode = 2
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1262633085]
+material = SubResource("CanvasItemMaterial_safpt")
+position = Vector2(592, 72)
+amount = 80
+texture = SubResource("GradientTexture2D_gjl0y")
+lifetime = 5.0
+randomness = 0.73
+visibility_rect = Rect2(-250, -100, 500, 200)
+process_material = SubResource("ParticleProcessMaterial_d5x7l")

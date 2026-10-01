@@ -33,6 +33,7 @@ folder_colors={
 "res://00_global/": "pink",
 "res://general/": "purple",
 "res://levels/": "orange",
+"res://materials_and_shaders/": "blue",
 "res://player/": "green"
 }
 
