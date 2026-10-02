@@ -28,6 +28,7 @@ enum SIDE {
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
+	apply_area_settings()
 	SceneManager.new_scene_ready.connect(_on_new_scene_ready)
 	SceneManager.load_scene_finished.connect(_on_load_scene_finished)
 	area_2d.body_entered.connect(_on_player_entered)

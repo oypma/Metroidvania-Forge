@@ -3,6 +3,7 @@
 [ext_resource type="TileSet" uid="uid://jl8xm6vayrxi" path="res://levels/tilesets/forgotten_forest.tres" id="1_aait6"]
 [ext_resource type="Script" uid="uid://cvlapi3fdifvt" path="res://general/scripts/level_bounds.gd" id="2_x0ng3"]
 [ext_resource type="PackedScene" uid="uid://coi0vcyvfj31x" path="res://general/level_transition/level_transition.tscn" id="3_x0ng3"]
+[ext_resource type="PackedScene" uid="uid://cpu56uihpy3rm" path="res://general/player_spawn/player_spawn.tscn" id="4_7y5fl"]
 
 [node name="01" type="Node2D" unique_id=493416971]
 
@@ -50,3 +51,6 @@ target_area_name = "LevelTransition4"
 [node name="DarkenerLight" type="DirectionalLight2D" parent="." unique_id=1445350458]
 color = Color(0.09047016, 0.11856222, 0.093591504, 1)
 blend_mode = 2
+
+[node name="PlayerSpawn" parent="." unique_id=1200029291 instance=ExtResource("4_7y5fl")]
+position = Vector2(440, 104)

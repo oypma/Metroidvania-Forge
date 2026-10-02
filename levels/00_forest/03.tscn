@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cvlapi3fdifvt" path="res://general/scripts/level_bounds.gd" id="2_vv2jw"]
 [ext_resource type="Texture2D" uid="uid://blkwmdbr6wsr8" path="res://levels/tilesets/sprites/light_stream.jpg" id="4_7vwju"]
 [ext_resource type="PackedScene" uid="uid://coi0vcyvfj31x" path="res://general/level_transition/level_transition.tscn" id="4_r7adf"]
+[ext_resource type="PackedScene" uid="uid://cpu56uihpy3rm" path="res://general/player_spawn/player_spawn.tscn" id="5_7vwju"]
 
 [sub_resource type="Gradient" id="Gradient_vv2jw"]
 colors = PackedColorArray(0.52156866, 0.7372549, 0.7058824, 1, 0.2784314, 0.4509804, 0.52156866, 0)
@@ -257,3 +258,6 @@ lifetime = 5.0
 randomness = 0.73
 visibility_rect = Rect2(-250, -100, 500, 200)
 process_material = SubResource("ParticleProcessMaterial_b4vbt")
+
+[node name="PlayerSpawn" parent="." unique_id=1200029291 instance=ExtResource("5_7vwju")]
+position = Vector2(424, 72)

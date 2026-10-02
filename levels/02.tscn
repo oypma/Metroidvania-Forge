@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://coi0vcyvfj31x" path="res://general/level_transition/level_transition.tscn" id="3_mqqax"]
 [ext_resource type="Texture2D" uid="uid://blkwmdbr6wsr8" path="res://levels/tilesets/sprites/light_stream.jpg" id="4_a7of6"]
 [ext_resource type="Material" uid="uid://l4p5rfj3wr28" path="res://materials_and_shaders/fog_fade_material.tres" id="4_mqqax"]
+[ext_resource type="PackedScene" uid="uid://cpu56uihpy3rm" path="res://general/player_spawn/player_spawn.tscn" id="6_5463q"]
 
 [sub_resource type="Gradient" id="Gradient_vhcel"]
 colors = PackedColorArray(0.52156866, 0.7372549, 0.7058824, 1, 0.2784314, 0.4509804, 0.52156866, 0)
@@ -249,3 +250,6 @@ offset = Vector2(0, 256)
 color = Color(0.2901961, 0.41960785, 0.36078432, 1)
 energy = 0.6
 blend_mode = 2
+
+[node name="PlayerSpawn" parent="." unique_id=1200029291 instance=ExtResource("6_5463q")]
+position = Vector2(496, 112)
