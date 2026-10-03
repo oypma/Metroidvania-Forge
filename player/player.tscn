@@ -186,6 +186,7 @@ libraries/ = SubResource("AnimationLibrary_rgyib")
 autoplay = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=69164732]
+process_mode = 3
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=31959986]
 color = Color(1, 0.8, 0.56078434, 1)

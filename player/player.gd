@@ -23,6 +23,15 @@ var previous_state:PlayerState :
 	get : return states[1]
 #endregion
 
+#region /// Player Stats
+var hp:float = 20.0
+var max_hp:float = 20.0
+var dash:bool = false
+var double_jump:bool = false
+var ground_slam:bool = false
+var morph_roll:bool = false
+#endregion
+
 #region /// Standard Variables
 var direction:Vector2 = Vector2.ZERO
 var gravity:float = 980.0
