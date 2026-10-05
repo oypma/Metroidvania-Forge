@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gsd6bkdrh8et"
-path="res://.godot/imported/input_hints.svg-6a4322332784194c515292b881a78eb7.ctex"
+uid="uid://bdo8pvewsmior"
+path="res://.godot/imported/switch.svg-1a847ce9589c90edfc0dc6c2b199e142.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ch_03_game_systems/icons/input_hints.svg"
-dest_files=["res://.godot/imported/input_hints.svg-6a4322332784194c515292b881a78eb7.ctex"]
+source_file="res://general/icons/switch.svg"
+dest_files=["res://.godot/imported/switch.svg-1a847ce9589c90edfc0dc6c2b199e142.ctex"]
 
 [params]
 

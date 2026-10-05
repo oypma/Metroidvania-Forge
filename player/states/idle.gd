@@ -25,7 +25,7 @@ func handle_input(_event:InputEvent) -> PlayerState:
 func process(_delta:float) -> PlayerState:
 	if player.direction.x != 0:
 		return run
-	elif player.direction.y > 0.5:
+	elif player.direction.y > 0.5 and !Messages.player_interacted.has_connections():
 		return crouch
 	return null
 

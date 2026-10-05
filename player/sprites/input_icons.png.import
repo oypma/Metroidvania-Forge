@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdo8pvewsmior"
-path="res://.godot/imported/switch.svg-757c0bfcc0ddd888bb4fbf8d7eb07448.ctex"
+uid="uid://bwplix10do7r3"
+path="res://.godot/imported/input_icons.png-9453319ceb4c2c3b82a2d0cd4c121cc5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ch_03_game_systems/icons/switch.svg"
-dest_files=["res://.godot/imported/switch.svg-757c0bfcc0ddd888bb4fbf8d7eb07448.ctex"]
+source_file="res://player/sprites/input_icons.png"
+dest_files=["res://.godot/imported/input_icons.png-9453319ceb4c2c3b82a2d0cd4c121cc5.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

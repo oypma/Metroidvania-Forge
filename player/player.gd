@@ -43,8 +43,11 @@ func _ready() -> void:
 		self.queue_free()
 	initialize_states()
 	self.call_deferred("reparent", get_tree().root)
+	Messages.player_healed.connect(_on_player_healed)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("action"):
+		Messages.player_interacted.emit(self)
 	change_state(current_state.handle_input(event))
 
 func _process(delta: float) -> void:
@@ -114,3 +117,6 @@ func add_debug_indicator(color:Color = Color.RED):
 	d.modulate = color
 	await get_tree().create_timer(3.0).timeout
 	d.queue_free()
+
+func _on_player_healed(amount:float, min_value:float = 0) -> void:
+	hp += clampf(amount, min_value, max_hp)

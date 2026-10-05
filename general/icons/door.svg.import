@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cagawjcv58hvv"
-path="res://.godot/imported/door.svg-4d79ea3d73c7c2d713db0d94673c120f.ctex"
+path="res://.godot/imported/door.svg-23a80835154d105fe2e86e2e585127f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ch_03_game_systems/icons/door.svg"
-dest_files=["res://.godot/imported/door.svg-4d79ea3d73c7c2d713db0d94673c120f.ctex"]
+source_file="res://general/icons/door.svg"
+dest_files=["res://.godot/imported/door.svg-23a80835154d105fe2e86e2e585127f9.ctex"]
 
 [params]
 

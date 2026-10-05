@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5ohvno22mhr5"
-path="res://.godot/imported/save_point.png-d14a8b2984ccc773187e70d5c70e8a2a.ctex"
+uid="uid://byuslyw1htomn"
+path="res://.godot/imported/save_point.svg-6f8d8065417b22f0a04b8e076a141883.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ch_03_game_systems/sprites/save_point.png"
-dest_files=["res://.godot/imported/save_point.png-d14a8b2984ccc773187e70d5c70e8a2a.ctex"]
+source_file="res://general/icons/save_point.svg"
+dest_files=["res://.godot/imported/save_point.svg-6f8d8065417b22f0a04b8e076a141883.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

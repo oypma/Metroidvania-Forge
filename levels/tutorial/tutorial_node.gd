@@ -7,10 +7,13 @@ extends PanelContainer
 		tutorial_text = new_val
 		update_label_text()
 @export var actions_to_press:Array[String] = [""]
+@export var input_hint:String = ""
 
 @onready var label: Label = $Label
 
 func _ready() -> void:
+	if !input_hint:
+		input_hint = ""
 	if Engine.is_editor_hint():
 		return
 	label = $Label

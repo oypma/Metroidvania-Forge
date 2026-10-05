@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lfpsnvh5ku7g"
-path="res://.godot/imported/music_trigger.svg-20d86f5cffcc0c5c943b2257bdeffc2b.ctex"
+uid="uid://5ohvno22mhr5"
+path="res://.godot/imported/save_point.png-cf4f7dd4d217d857bf3f46fd99e9edff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ch_03_game_systems/icons/music_trigger.svg"
-dest_files=["res://.godot/imported/music_trigger.svg-20d86f5cffcc0c5c943b2257bdeffc2b.ctex"]
+source_file="res://general/save_point/save_point.png"
+dest_files=["res://.godot/imported/save_point.png-cf4f7dd4d217d857bf3f46fd99e9edff.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

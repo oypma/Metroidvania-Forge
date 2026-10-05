@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwplix10do7r3"
-path="res://.godot/imported/input_icons.png-a27bec0659e59b82150910d6744ccf94.ctex"
+uid="uid://lfpsnvh5ku7g"
+path="res://.godot/imported/music_trigger.svg-e54fe2af4c4b6cda309bdafe9ff95ab1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ch_03_game_systems/sprites/input_icons.png"
-dest_files=["res://.godot/imported/input_icons.png-a27bec0659e59b82150910d6744ccf94.ctex"]
+source_file="res://general/icons/music_trigger.svg"
+dest_files=["res://.godot/imported/music_trigger.svg-e54fe2af4c4b6cda309bdafe9ff95ab1.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
