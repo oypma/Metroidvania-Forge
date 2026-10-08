@@ -8,7 +8,8 @@ const HINT_MAP : Dictionary = {
 		"attack" : 10,
 		"dash" : 11,
 		"up" : 13,
-		"crouch" : 12
+		"crouch" : 12,
+		"close" : 14
 	}
 }
 

@@ -34,9 +34,9 @@ func _on_selection_changed():
 func tutorial_go(index:int = 0):
 	var tutorial_node_active:TutorialNode = tutorial_nodes[index]
 	tutorial_node_active.show()
+	Messages.input_hint_changed.emit(tutorial_node_active.input_hint)
 	if tutorial_node_active.actions_to_press.size() == 0:
 		return
-	Messages.input_hint_changed.emit(tutorial_node_active.input_hint)
 	for action in tutorial_node_active.actions_to_press:
 		if Input.is_action_pressed(action):
 			tutorial_node_active.hide()

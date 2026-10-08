@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dmtatom8jwknd" path="res://levels/tutorial/tutorial_node.gd" id="1_qlmek"]
 
 [node name="TutorialNode" type="PanelContainer" unique_id=1359410521]
+z_index = 1
 custom_minimum_size = Vector2(97, 40)
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,7 +16,6 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 script = ExtResource("1_qlmek")
 tutorial_text = "Tutorial Test"
-actions_to_press = null
 
 [node name="Label" type="Label" parent="." unique_id=2123773033]
 custom_minimum_size = Vector2(97, 40)

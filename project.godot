@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Metroidvania Forge"
-run/main_scene="uid://cilmdg5tpbdkk"
+run/main_scene="uid://cbunaylq7mcli"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://bn3bmyqingnk6"
 
@@ -36,12 +36,17 @@ folder_colors={
 "res://general/": "purple",
 "res://levels/": "orange",
 "res://materials_and_shaders/": "blue",
-"res://player/": "green"
+"res://player/": "green",
+"res://title_screen/": "yellow"
 }
 
 [global_group]
 
 Player=""
+
+[gui]
+
+theme/custom_font="uid://cuuyxl3igag8f"
 
 [input]
 

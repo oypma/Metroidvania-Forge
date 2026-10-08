@@ -1,0 +1,307 @@
+[gd_scene format=4 uid="uid://cbunaylq7mcli"]
+
+[ext_resource type="TileSet" uid="uid://jl8xm6vayrxi" path="res://levels/tilesets/forgotten_forest.tres" id="1_3bs1k"]
+[ext_resource type="Script" uid="uid://cpqmoi2t0tich" path="res://title_screen/title_scene.gd" id="1_q8o57"]
+[ext_resource type="Texture2D" uid="uid://biiti8qb3e5k0" path="res://title_screen/metroidvania_logo.png" id="2_d0svy"]
+[ext_resource type="PackedScene" uid="uid://dashjdsov4kli" path="res://levels/tutorial/tutorial_manager.tscn" id="4_k7h6s"]
+[ext_resource type="PackedScene" uid="uid://26xrr8bafba0" path="res://levels/tutorial/tutorial_node.tscn" id="5_dnxku"]
+
+[sub_resource type="Animation" id="Animation_d0svy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_j4xaf"]
+resource_name = "loop"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+}
+
+[sub_resource type="Animation" id="Animation_q8o57"]
+resource_name = "start"
+length = 1.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.90000004, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j4xaf"]
+_data = {
+&"RESET": SubResource("Animation_d0svy"),
+&"loop": SubResource("Animation_j4xaf"),
+&"start": SubResource("Animation_q8o57")
+}
+
+[node name="TitleScene" type="CanvasLayer" unique_id=505215046]
+layer = 5
+script = ExtResource("1_q8o57")
+
+[node name="Control" type="Control" parent="." unique_id=1555266326]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=2084836153]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1843273, 0.1843273, 0.1843273, 1)
+
+[node name="TileMapContainer" type="Control" parent="Control" unique_id=1358042300]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TileMapBackground" type="TileMapLayer" parent="Control/TileMapContainer" unique_id=1897143047]
+modulate = Color(0.52156866, 0.57254905, 0.63529414, 1)
+position = Vector2(0, 4)
+tile_map_data = PackedByteArray("AAAEAAQAAAAHAA0AAAAEAAUAAAAHAA4AAAAFAAQAAAAIAA0AAAAFAAUAAAAIAA4AAAAGAAQAAAAJAA0AAAAGAAUAAAAJAA4AAAAIAAQAAAAHAA0AAAAIAAUAAAAHAA4AAAAJAAQAAAAIAA0AAAAJAAUAAAAIAA4AAAAKAAQAAAAJAA0AAAAKAAUAAAAJAA4AAAAEAAMAAAAHAA0AAAAFAAMAAAAIAA0AAAAGAAMAAAAJAA0AAAAEAAIAAAAHAA0AAAAFAAIAAAAIAA0AAAAGAAIAAAAJAA0AAAAIAAMAAAAHAA0AAAAJAAMAAAAIAA0AAAAKAAMAAAAJAA0AAAAIAAIAAAAHAA0AAAAJAAIAAAAIAA0AAAAKAAIAAAAJAA0AAAAEAAEAAAAHAAwAAAAFAAEAAAAIAAwAAAAGAAEAAAAJAAwAAAAIAAEAAAAHAAwAAAAJAAEAAAAIAAwAAAAKAAEAAAAJAAwAAAAHAAEAAAAHAA0AAAAHAAIAAAAHAA0AAAAHAAMAAAAHAA0AAAAHAAQAAAAHAA0AAAAHAAUAAAAHAA0AAAALAAIAAAAJAA0AAAAMAAIAAAAJAA0AAAAMAAMAAAAJAA0AAAANAAMAAAAJAA0AAAANAAQAAAAJAA0AAAAMAAQAAAAJAA0AAAALAAQAAAAJAA0AAAANAAIAAAAJAA0AAAAOAAIAAAAJAA0AAAAOAAMAAAAJAA0AAAAOAAQAAAAJAA0AAAAOAAUAAAAJAA0AAAALAAMAAAAJAA0AAAAMAAUAAAAJAA0AAAANAAUAAAAJAA0AAAALAAUAAAAJAA0AAAAAAAIAAAAHAA0AAAAAAAMAAAAHAA0AAAABAAMAAAAHAA0AAAABAAQAAAAHAA0AAAACAAQAAAAHAA0AAAADAAQAAAAHAA0AAAADAAMAAAAHAA0AAAACAAMAAAAHAA0AAAACAAIAAAAHAA0AAAADAAIAAAAHAA0AAAABAAIAAAAHAA0AAAABAAUAAAAHAA0AAAAAAAUAAAAHAA0AAAACAAUAAAAHAA0AAAADAAUAAAAHAA0AAAAAAAQAAAAHAA0AAAABAAEAAAAHAA0AAAACAAEAAAAHAA0AAAADAAEAAAAHAA0AAAAAAAEAAAAHAA0AAAALAAEAAAAJAA0AAAAMAAEAAAAJAA0AAAANAAEAAAAJAA0AAAA=")
+tile_set = ExtResource("1_3bs1k")
+collision_enabled = false
+
+[node name="TileMapProps" type="TileMapLayer" parent="Control/TileMapContainer" unique_id=1119834153]
+tile_map_data = PackedByteArray("AAACAAUAAQAAAAAAAgAMAAUAAQAAAAAAAgA=")
+tile_set = ExtResource("1_3bs1k")
+
+[node name="TileMap" type="TileMapLayer" parent="Control/TileMapContainer" unique_id=1477724531]
+tile_map_data = PackedByteArray("AAAAAAYAAAABAAgAAAAAAAcAAAACAAkAAAABAAYAAAACAAgAAAABAAcAAAADAAkAAAACAAYAAAADAAgAAAACAAcAAAACAAkAAAADAAYAAAAEAAgAAAADAAcAAAADAAkAAAAAAAgAAAACAAoAAAABAAgAAAADAAoAAAACAAgAAAACAAoAAAADAAgAAAADAAoAAAAEAAYAAAABAAgAAAAEAAcAAAACAAkAAAAFAAYAAAACAAgAAAAFAAcAAAADAAkAAAAGAAYAAAADAAgAAAAGAAcAAAACAAkAAAAHAAYAAAAEAAgAAAAHAAcAAAADAAkAAAAEAAgAAAACAAoAAAAFAAgAAAADAAoAAAAGAAgAAAACAAoAAAAHAAgAAAADAAoAAAAIAAYAAAABAAgAAAAIAAcAAAACAAkAAAAJAAYAAAACAAgAAAAJAAcAAAADAAkAAAAKAAYAAAADAAgAAAAKAAcAAAACAAkAAAALAAYAAAAEAAgAAAALAAcAAAADAAkAAAAIAAgAAAACAAoAAAAJAAgAAAADAAoAAAAKAAgAAAACAAoAAAALAAgAAAADAAoAAAAMAAYAAAABAAgAAAAMAAcAAAACAAkAAAANAAYAAAACAAgAAAANAAcAAAADAAkAAAAOAAYAAAADAAgAAAAOAAcAAAACAAkAAAAMAAgAAAACAAoAAAANAAgAAAADAAoAAAAOAAgAAAACAAoAAAAAAAkAAAACAAsAAAABAAkAAAADAAsAAAACAAkAAAACAAsAAAADAAkAAAADAAsAAAAEAAkAAAACAAsAAAAFAAkAAAADAAsAAAAGAAkAAAACAAsAAAAHAAkAAAADAAsAAAAIAAkAAAACAAsAAAAJAAkAAAADAAsAAAAKAAkAAAACAAsAAAALAAkAAAADAAsAAAAMAAkAAAACAAsAAAANAAkAAAADAAsAAAAOAAkAAAACAAsAAAAAAAIAAAAEAAwAAAABAAIAAAAFAAwAAAAEAAAAAAADAAwAAAADAAAAAAAEAAwAAAAFAAAAAAADAAwAAAAGAAAAAAADAAwAAAAHAAAAAAADAAwAAAAIAAAAAAADAAwAAAAOAAIAAAADAAwAAAANAAIAAAAAAAwAAAALAAAAAAADAAwAAAAJAAAAAAACAAwAAAAKAAAAAAACAAwAAAAAAAAAAAACAAoAAAABAAAAAAAFAA4AAAACAAAAAAAEAAwAAAABAAEAAAAFAAsAAAAAAAEAAAAEAAsAAAAAAP//AAACAAsAAAABAP//AAACAAsAAAACAP//AAACAAsAAAADAP//AAACAAsAAAAEAP//AAACAAsAAAAFAP//AAACAAsAAAAGAP//AAACAAsAAAANAAAAAAACAA4AAAAMAAAAAAADAAwAAAANAAEAAAAAAAsAAAAOAAEAAAACAAsAAAAOAAAAAAACAAsAAAAOAP//AAACAAsAAAAHAP//AAACAAsAAAAIAP//AAACAAsAAAAJAP//AAACAAsAAAAKAP//AAACAAsAAAALAP//AAACAAsAAAAMAP//AAACAAsAAAANAP//AAACAAsAAAA=")
+tile_set = ExtResource("1_3bs1k")
+
+[node name="MainMenu" type="VBoxContainer" parent="Control" unique_id=1508175233]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -135.0
+offset_right = 80.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Logo" type="Control" parent="Control/MainMenu" unique_id=1871551942]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/MainMenu/Logo" unique_id=1546890683]
+position = Vector2(0, 51)
+texture = ExtResource("2_d0svy")
+hframes = 8
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/MainMenu/Logo" unique_id=1591472116]
+libraries/ = SubResource("AnimationLibrary_j4xaf")
+autoplay = &"start"
+
+[node name="NewGame" type="Button" parent="Control/MainMenu" unique_id=275499894]
+unique_name_in_owner = true
+layout_mode = 2
+text = "New Game"
+
+[node name="LoadGame" type="Button" parent="Control/MainMenu" unique_id=1413374018]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Load Game"
+
+[node name="Tutorial" type="Button" parent="Control/MainMenu" unique_id=1997278022]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Play Tutorial"
+
+[node name="NewGameMenu" type="VBoxContainer" parent="Control" unique_id=1568817964]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -79.0
+offset_right = 84.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="NewGameLabel" type="Label" parent="Control/NewGameMenu" unique_id=1094829901]
+modulate = Color(0.6745098, 0.19607843, 0.19607843, 1)
+layout_mode = 2
+text = "Start a new game"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Control/NewGameMenu" unique_id=1028466154]
+layout_mode = 2
+
+[node name="NewSlot01" type="Button" parent="Control/NewGameMenu" unique_id=196417784]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Begin Slot 1"
+
+[node name="NewSlot02" type="Button" parent="Control/NewGameMenu" unique_id=1721108857]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Begin Slot 2"
+
+[node name="NewSlot03" type="Button" parent="Control/NewGameMenu" unique_id=760781307]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Begin Slot 3"
+
+[node name="LoadGameMenu" type="VBoxContainer" parent="Control" unique_id=954891422]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -79.0
+offset_right = 84.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="NewGameLabel" type="Label" parent="Control/LoadGameMenu" unique_id=765450649]
+modulate = Color(0.6745098, 0.19607843, 0.19607843, 1)
+layout_mode = 2
+text = "Load a saved game..."
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Control/LoadGameMenu" unique_id=1945605612]
+layout_mode = 2
+
+[node name="LoadSlot01" type="Button" parent="Control/LoadGameMenu" unique_id=2118282576]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Load slot 1"
+
+[node name="LoadSlot02" type="Button" parent="Control/LoadGameMenu" unique_id=1751474255]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Load slot 2"
+
+[node name="LoadSlot03" type="Button" parent="Control/LoadGameMenu" unique_id=1064915698]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Load slot 3"
+
+[node name="Tutorial" type="Node2D" parent="." unique_id=1366502657]
+z_index = 1
+
+[node name="TutorialManager" parent="Tutorial" unique_id=27344361 instance=ExtResource("4_k7h6s")]
+
+[node name="TutorialNode" parent="Tutorial/TutorialManager" unique_id=1359410521 instance=ExtResource("5_dnxku")]
+visible = false
+offset_right = 97.0
+offset_bottom = 40.0
+tutorial_text = "Hello! Welcome to the tutorial! <tab>"
+actions_to_press = Array[String](["continue"])
+
+[node name="TutorialNode2" parent="Tutorial/TutorialManager" unique_id=1750876261 instance=ExtResource("5_dnxku")]
+visible = false
+offset_right = 97.0
+offset_bottom = 40.0
+tutorial_text = "Press W, D and arrows to move around"
+actions_to_press = Array[String](["left", "right"])
+
+[node name="TutorialNode3" parent="Tutorial/TutorialManager" unique_id=1460376448 instance=ExtResource("5_dnxku")]
+visible = false
+offset_right = 97.0
+offset_bottom = 40.0
+tutorial_text = "Press Space or Z to jump"
+actions_to_press = Array[String](["jump"])
+input_hint = "jump"
+
+[node name="TutorialNode4" parent="Tutorial/TutorialManager" unique_id=1064622855 instance=ExtResource("5_dnxku")]
+visible = false
+offset_right = 97.0
+offset_bottom = 40.0
+tutorial_text = "Press S to crouch"
+actions_to_press = Array[String](["down"])
+input_hint = "crouch"
+
+[node name="TutorialNode5" parent="Tutorial/TutorialManager" unique_id=472237171 instance=ExtResource("5_dnxku")]
+visible = false
+offset_right = 97.0
+offset_bottom = 40.0
+tutorial_text = "When on a one way platform, crouch and jump to fall through <space>"
+actions_to_press = Array[String](["jump"])
+
+[node name="TutorialNode6" parent="Tutorial/TutorialManager" unique_id=1448728269 instance=ExtResource("5_dnxku")]
+visible = false
+offset_right = 97.0
+offset_bottom = 40.0
+tutorial_text = "Press Escape to get out of prompts like load or start new game <tab>"
+actions_to_press = Array[String](["continue"])
+
+[node name="TutorialNode7" parent="Tutorial/TutorialManager" unique_id=648297484 instance=ExtResource("5_dnxku")]
+visible = false
+offset_right = 97.0
+offset_bottom = 40.0
+tutorial_text = "Congrats! You finished the tutorial! Press Escape to return."
+actions_to_press = Array[String](["ui_cancel"])
+input_hint = "close"
+
+[node name="TutorialNode8" parent="Tutorial/TutorialManager" unique_id=1951390230 instance=ExtResource("5_dnxku")]
+visible = false
+offset_top = -32.0
+offset_right = 97.0
+offset_bottom = 8.0
+tutorial_text = "Dont see this pls"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Tutorial" unique_id=1572203222]
+tile_map_data = PackedByteArray("AAAOAAgAAAATAAUAAAAOAAcAAAAWAAMAAAANAAgAAAAVAAUAAAANAAcAAAAVAAAAAAAMAAgAAAAVAAUAAAAMAAcAAAAVAAAAAAALAAgAAAAVAAUAAAALAAcAAAAVAAAAAAAKAAgAAAAVAAUAAAAKAAcAAAAVAAAAAAAJAAgAAAAVAAUAAAAJAAcAAAAVAAAAAAAIAAgAAAAVAAUAAAAIAAcAAAAVAAAAAAAHAAgAAAAVAAUAAAAHAAcAAAAVAAAAAAAGAAgAAAAVAAUAAAAGAAcAAAAVAAAAAAAFAAgAAAAVAAUAAAAFAAcAAAAVAAAAAAAEAAgAAAAVAAUAAAAEAAcAAAAVAAAAAAADAAgAAAAVAAUAAAADAAcAAAAVAAAAAAACAAgAAAAVAAUAAAACAAcAAAAVAAAAAAABAAgAAAAVAAUAAAABAAcAAAAVAAAAAAAAAAgAAAAUAAUAAAAAAAcAAAAQAAIAAAADAAUAAAAQAAYAAAAEAAUAAAARAAYAAAAFAAUAAAASAAYAAAAGAAUAAAATAAYAAAAIAAQAAAATAA0AAAAIAAUAAAATAA4AAAAIAAYAAAATAA8AAAAJAAQAAAAUAA0AAAAJAAUAAAAUAA4AAAAJAAYAAAAUAA8AAAAKAAQAAAAVAA0AAAAKAAUAAAAVAA4AAAAKAAYAAAAVAA8AAAALAAQAAAAWAA0AAAALAAUAAAAWAA4AAAALAAYAAAAWAA8AAAAAAAYAAAAXAAQAAAAAAAUAAAAXAAQAAAAAAAQAAAAXAAQAAAAAAAMAAAAXAAQAAAAAAAIAAAAXAAQAAAAAAAEAAAAXAAQAAAAAAAAAAAAXAAQAAAAOAAYAAAAXAAQAAAAOAAUAAAAXAAQAAAAOAAQAAAAXAAQAAAAOAAMAAAAXAAQAAAAOAAIAAAAXAAQAAAAOAAEAAAAXAAQAAAAOAAAAAAAXAAQAAAAOAP//AAAXAAEAAAANAP//AAARAAUAAAAMAP//AAARAAUAAAALAP//AAARAAUAAAAKAP//AAARAAUAAAAJAP//AAARAAUAAAAIAP//AAARAAUAAAAHAP//AAARAAUAAAAGAP//AAARAAUAAAAFAP//AAARAAUAAAAEAP//AAARAAUAAAADAP//AAARAAUAAAACAP//AAARAAUAAAABAP//AAARAAUAAAAAAP//AAAQAAEAAAA=")
+tile_set = ExtResource("1_3bs1k")
+
+[node name="PlayerSpawn" type="Node2D" parent="Tutorial" unique_id=1196606097]
+position = Vector2(128, 80)
