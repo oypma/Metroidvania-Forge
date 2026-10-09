@@ -20,6 +20,7 @@ config/icon="uid://bn3bmyqingnk6"
 SceneManager="*uid://crexy2y1bn4gq"
 SaveManager="*uid://fw8pnvj6r7oq"
 Messages="*uid://nvrj685ai6ar"
+PlayerHud="*uid://b23jjjl55rlpk"
 
 [display]
 
