@@ -13,7 +13,8 @@ func _ready() -> void:
 	fade.hide()
 	await get_tree().process_frame
 	load_scene_finished.emit()
-	current_scene_uid = ResourceUID.path_to_uid(ProjectSettings.get_setting("application/run/main_scene"))
+	var current_scene:String = get_tree().current_scene.scene_file_path
+	current_scene_uid = ResourceUID.path_to_uid(current_scene)
 
 func transition_scene(new_scene:String, target_area:String, player_offset:Vector2, dir : String) -> void:
 	
