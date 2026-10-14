@@ -23,6 +23,8 @@ extends CanvasLayer
 
 const PLAYER = preload("res://player/player.tscn")
 
+var tutorial_finished:bool = false
+
 func _ready() -> void:
 	connect_button_signals()
 	show_main_menu()
@@ -30,8 +32,11 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
+		await get_tree().process_frame
 		if main_menu.visible == false:
 			show_main_menu()
+			if tutorial_finished == true:
+				%Tutorial.disabled = true
 
 func show_main_menu() -> void:
 	for c in $Tutorial.get_children():
@@ -70,6 +75,7 @@ func show_tutorial() -> void:
 	%MainMenu.hide()
 	var player_inst = PLAYER.instantiate()
 	$Tutorial.add_child(player_inst)
+	player_inst.camera_2d.enabled = false
 	player_inst.global_position = player_spawn.global_position
 	await get_tree().process_frame
 	player_inst.reparent(self)
@@ -102,10 +108,12 @@ func show_load_game_menu() -> void:
 func on_new_game_pressed(slot:int) -> void:
 	delete_tutorial()
 	SaveManager.create_new_game_save(slot)
+	SceneManager.game_is_running = true
 
 func on_load_game_pressed(slot:int) -> void:
 	delete_tutorial()
 	SaveManager.load_game(slot)
+	SceneManager.game_is_running = true
 
 func delete_tutorial() -> void:
 	$Tutorial.queue_free()
@@ -115,3 +123,7 @@ func _on_animation_finished(_name:String) -> void:
 		animation_player.play("loop")
 	else:
 		return
+
+
+func _on_finish_finished() -> void:
+	tutorial_finished = true

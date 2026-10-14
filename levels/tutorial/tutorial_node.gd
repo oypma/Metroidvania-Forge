@@ -11,6 +11,9 @@ extends PanelContainer
 
 @onready var label: Label = $Label
 
+@warning_ignore("unused_signal")
+signal finished()
+
 func _ready() -> void:
 	if !input_hint:
 		input_hint = ""

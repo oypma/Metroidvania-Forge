@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dycffb4ywdldx"
-path="res://.godot/imported/door_and_switch.png-bf4e1fbc6b8f0262799b12fca8dcf3c5.ctex"
+path="res://.godot/imported/door_and_switch.png-fb8ab323b91ecd3817ff25cc97a226e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ch_03_game_systems/sprites/door_and_switch.png"
-dest_files=["res://.godot/imported/door_and_switch.png-bf4e1fbc6b8f0262799b12fca8dcf3c5.ctex"]
+source_file="res://general/door_and_switch/door_and_switch.png"
+dest_files=["res://.godot/imported/door_and_switch.png-fb8ab323b91ecd3817ff25cc97a226e9.ctex"]
 
 [params]
 

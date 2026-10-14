@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://naylsldiolrk"
-path="res://.godot/imported/ui_bloop_audio.wav-7d59f55ca703fd3fd055626cc8d5162c.sample"
+path="res://.godot/imported/ui_bloop_audio.wav-3740ae6ee22517c12741aef3270d6337.sample"
 
 [deps]
 
-source_file="res://ch_03_game_systems/audio/ui_bloop_audio.wav"
-dest_files=["res://.godot/imported/ui_bloop_audio.wav-7d59f55ca703fd3fd055626cc8d5162c.sample"]
+source_file="res://00_global/audio/ui_audio/ui_bloop_audio.wav"
+dest_files=["res://.godot/imported/ui_bloop_audio.wav-3740ae6ee22517c12741aef3270d6337.sample"]
 
 [params]
 

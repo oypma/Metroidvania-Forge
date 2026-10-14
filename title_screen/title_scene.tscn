@@ -67,6 +67,7 @@ layer = 5
 script = ExtResource("1_q8o57")
 
 [node name="Control" type="Control" parent="." unique_id=1555266326]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -235,26 +236,25 @@ layout_mode = 2
 text = "Load slot 3"
 
 [node name="Tutorial" type="Node2D" parent="." unique_id=1366502657]
-visible = false
 z_index = 1
 
 [node name="TutorialManager" parent="Tutorial" unique_id=27344361 instance=ExtResource("4_k7h6s")]
 
-[node name="TutorialNode" parent="Tutorial/TutorialManager" unique_id=1359410521 instance=ExtResource("5_dnxku")]
+[node name="Welcome" parent="Tutorial/TutorialManager" unique_id=1359410521 instance=ExtResource("5_dnxku")]
 visible = false
 offset_right = 97.0
 offset_bottom = 40.0
 tutorial_text = "Hello! Welcome to the tutorial! <tab>"
 actions_to_press = Array[String](["continue"])
 
-[node name="TutorialNode2" parent="Tutorial/TutorialManager" unique_id=1750876261 instance=ExtResource("5_dnxku")]
+[node name="Move" parent="Tutorial/TutorialManager" unique_id=1750876261 instance=ExtResource("5_dnxku")]
 visible = false
 offset_right = 97.0
 offset_bottom = 40.0
-tutorial_text = "Press W, D and arrows to move around"
+tutorial_text = "Press A, D and arrows to move around"
 actions_to_press = Array[String](["left", "right"])
 
-[node name="TutorialNode3" parent="Tutorial/TutorialManager" unique_id=1460376448 instance=ExtResource("5_dnxku")]
+[node name="Jump" parent="Tutorial/TutorialManager" unique_id=1460376448 instance=ExtResource("5_dnxku")]
 visible = false
 offset_right = 97.0
 offset_bottom = 40.0
@@ -262,7 +262,7 @@ tutorial_text = "Press Space or Z to jump"
 actions_to_press = Array[String](["jump"])
 input_hint = "jump"
 
-[node name="TutorialNode4" parent="Tutorial/TutorialManager" unique_id=1064622855 instance=ExtResource("5_dnxku")]
+[node name="Crouch" parent="Tutorial/TutorialManager" unique_id=1064622855 instance=ExtResource("5_dnxku")]
 visible = false
 offset_right = 97.0
 offset_bottom = 40.0
@@ -270,29 +270,28 @@ tutorial_text = "Press S to crouch"
 actions_to_press = Array[String](["down"])
 input_hint = "crouch"
 
-[node name="TutorialNode5" parent="Tutorial/TutorialManager" unique_id=472237171 instance=ExtResource("5_dnxku")]
+[node name="OneWay" parent="Tutorial/TutorialManager" unique_id=472237171 instance=ExtResource("5_dnxku")]
 visible = false
 offset_right = 97.0
 offset_bottom = 40.0
 tutorial_text = "When on a one way platform, crouch and jump to fall through <space>"
 actions_to_press = Array[String](["jump"])
 
-[node name="TutorialNode6" parent="Tutorial/TutorialManager" unique_id=1448728269 instance=ExtResource("5_dnxku")]
+[node name="Escape" parent="Tutorial/TutorialManager" unique_id=1448728269 instance=ExtResource("5_dnxku")]
 visible = false
 offset_right = 97.0
 offset_bottom = 40.0
 tutorial_text = "Press Escape to get out of prompts like load or start new game and to pause game <tab>"
 actions_to_press = Array[String](["continue"])
 
-[node name="TutorialNode7" parent="Tutorial/TutorialManager" unique_id=648297484 instance=ExtResource("5_dnxku")]
-visible = false
+[node name="Finish" parent="Tutorial/TutorialManager" unique_id=648297484 instance=ExtResource("5_dnxku")]
 offset_right = 97.0
 offset_bottom = 40.0
 tutorial_text = "Congrats! You finished the tutorial! Press Escape to return."
 actions_to_press = Array[String](["ui_cancel"])
 input_hint = "close"
 
-[node name="TutorialNode8" parent="Tutorial/TutorialManager" unique_id=1951390230 instance=ExtResource("5_dnxku")]
+[node name="!!!" parent="Tutorial/TutorialManager" unique_id=1951390230 instance=ExtResource("5_dnxku")]
 visible = false
 offset_top = -32.0
 offset_right = 97.0
@@ -305,3 +304,5 @@ tile_set = ExtResource("1_3bs1k")
 
 [node name="PlayerSpawn" type="Node2D" parent="Tutorial" unique_id=1196606097]
 position = Vector2(128, 80)
+
+[connection signal="finished" from="Tutorial/TutorialManager/Finish" to="." method="_on_finish_finished"]

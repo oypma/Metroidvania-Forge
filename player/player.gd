@@ -8,6 +8,7 @@ const DEBUG_JUMP_INDICATOR = preload("uid://1n5lkptfbcul")
 @onready var collision_crouch: CollisionShape2D = $CollisionCrouch
 @onready var one_way_platform_shape_cast: ShapeCast2D = $OneWayPlatformShapeCast
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var camera_2d:Camera2D = $Camera2D
 #endregion
 
 #region /// export variables
@@ -55,7 +56,7 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("action"):
 		Messages.player_interacted.emit(self)
-	elif event.is_action_pressed("pause"):
+	elif event.is_action_pressed("pause") and SceneManager.game_is_running == true:
 		get_tree().paused = true
 		var pause_menu:PauseMenu = load("res://pause_menu/pause_menu.tscn").instantiate()
 		add_child(pause_menu)

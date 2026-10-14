@@ -67,5 +67,11 @@ size = 4
 target_level = "uid://cc0jawhlxy1go"
 target_area_name = "LevelTransition5"
 
+[node name="LevelTransition2" parent="." unique_id=193741032 instance=ExtResource("4_8n0dc")]
+position = Vector2(829, 160)
+size = 4
+location = 1
+target_level = "uid://cvfewyrgpwpbv"
+
 [node name="SavePoint" parent="." unique_id=1117332889 instance=ExtResource("5_wpexu")]
 position = Vector2(400, 72)

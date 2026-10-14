@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dk7ec2ma2bn4o"
-path="res://.godot/imported/door_crash.wav-ded93a4b7f0726a3cad40e7bc185c8e8.sample"
+path="res://.godot/imported/door_crash.wav-e1d08bb2863fd7c813d3d4e01b5bef19.sample"
 
 [deps]
 
-source_file="res://ch_03_game_systems/audio/door_crash.wav"
-dest_files=["res://.godot/imported/door_crash.wav-ded93a4b7f0726a3cad40e7bc185c8e8.sample"]
+source_file="res://general/door_and_switch/door_crash.wav"
+dest_files=["res://.godot/imported/door_crash.wav-e1d08bb2863fd7c813d3d4e01b5bef19.sample"]
 
 [params]
 

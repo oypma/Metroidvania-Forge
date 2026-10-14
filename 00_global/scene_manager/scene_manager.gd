@@ -8,6 +8,7 @@ signal scene_entered(uid:String)
 @onready var fade: Control = $Fade
 
 var current_scene_uid:String = ""
+var game_is_running:bool = false
 
 func _ready() -> void:
 	fade.hide()

@@ -35,11 +35,12 @@ func tutorial_go(index:int = 0):
 	var tutorial_node_active:TutorialNode = tutorial_nodes[index]
 	tutorial_node_active.show()
 	Messages.input_hint_changed.emit(tutorial_node_active.input_hint)
-	if tutorial_node_active.actions_to_press.size() == 0:
+	if tutorial_node_active.actions_to_press.size() == 0 or tutorial_node_active.actions_to_press[0] == "":
 		return
 	for action in tutorial_node_active.actions_to_press:
 		if Input.is_action_pressed(action):
 			tutorial_node_active.hide()
+			tutorial_node_active.finished.emit()
 			tutorial_go(index + 1)
 			return
 	await get_tree().process_frame
