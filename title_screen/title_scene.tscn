@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://biiti8qb3e5k0" path="res://title_screen/metroidvania_logo.png" id="2_d0svy"]
 [ext_resource type="PackedScene" uid="uid://dashjdsov4kli" path="res://levels/tutorial/tutorial_manager.tscn" id="4_k7h6s"]
 [ext_resource type="PackedScene" uid="uid://26xrr8bafba0" path="res://levels/tutorial/tutorial_node.tscn" id="5_dnxku"]
+[ext_resource type="Script" uid="uid://dbwkno4ka845d" path="res://music/music_auto_trigger.gd" id="6_dnxku"]
+[ext_resource type="AudioStream" uid="uid://bipik30ulvn28" path="res://music/title_01.ogg" id="7_1wkvc"]
 
 [sub_resource type="Animation" id="Animation_d0svy"]
 length = 0.001
@@ -67,7 +69,6 @@ layer = 5
 script = ExtResource("1_q8o57")
 
 [node name="Control" type="Control" parent="." unique_id=1555266326]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -236,6 +237,7 @@ layout_mode = 2
 text = "Load slot 3"
 
 [node name="Tutorial" type="Node2D" parent="." unique_id=1366502657]
+visible = false
 z_index = 1
 
 [node name="TutorialManager" parent="Tutorial" unique_id=27344361 instance=ExtResource("4_k7h6s")]
@@ -285,6 +287,7 @@ tutorial_text = "Press Escape to get out of prompts like load or start new game 
 actions_to_press = Array[String](["continue"])
 
 [node name="Finish" parent="Tutorial/TutorialManager" unique_id=648297484 instance=ExtResource("5_dnxku")]
+visible = false
 offset_right = 97.0
 offset_bottom = 40.0
 tutorial_text = "Congrats! You finished the tutorial! Press Escape to return."
@@ -304,5 +307,10 @@ tile_set = ExtResource("1_3bs1k")
 
 [node name="PlayerSpawn" type="Node2D" parent="Tutorial" unique_id=1196606097]
 position = Vector2(128, 80)
+
+[node name="MusicAutoTrigger" type="Node" parent="." unique_id=773703733]
+script = ExtResource("6_dnxku")
+track = ExtResource("7_1wkvc")
+metadata/_custom_type_script = "uid://dbwkno4ka845d"
 
 [connection signal="finished" from="Tutorial/TutorialManager/Finish" to="." method="_on_finish_finished"]

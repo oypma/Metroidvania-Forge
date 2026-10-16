@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://coi0vcyvfj31x" path="res://general/level_transition/level_transition.tscn" id="4_v7v88"]
 [ext_resource type="PackedScene" uid="uid://cpu56uihpy3rm" path="res://general/player_spawn/player_spawn.tscn" id="5_11nqt"]
 [ext_resource type="PackedScene" uid="uid://rd6jq2thih50" path="res://general/door_and_switch/switch.tscn" id="5_m2cyl"]
+[ext_resource type="Script" uid="uid://dbwkno4ka845d" path="res://music/music_auto_trigger.gd" id="7_60l56"]
+[ext_resource type="AudioStream" uid="uid://c02be0aodobfo" path="res://music/castle01.mp3" id="8_dxrqk"]
 
 [node name="02" type="Node2D" unique_id=31593790]
 
@@ -66,3 +68,9 @@ position = Vector2(184, -88)
 
 [node name="PlayerSpawn" parent="." unique_id=1200029291 instance=ExtResource("5_11nqt")]
 position = Vector2(88, 184)
+
+[node name="MusicAutoTrigger" type="Node" parent="." unique_id=1638719659]
+script = ExtResource("7_60l56")
+track = ExtResource("8_dxrqk")
+reverb = 3
+metadata/_custom_type_script = "uid://dbwkno4ka845d"

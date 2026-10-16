@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://cvlapi3fdifvt" path="res://general/scripts/level_bounds.gd" id="2_ngdgx"]
 [ext_resource type="PackedScene" uid="uid://coi0vcyvfj31x" path="res://general/level_transition/level_transition.tscn" id="3_ngdgx"]
 [ext_resource type="PackedScene" uid="uid://cpu56uihpy3rm" path="res://general/player_spawn/player_spawn.tscn" id="4_rgp3q"]
+[ext_resource type="Script" uid="uid://dbwkno4ka845d" path="res://music/music_auto_trigger.gd" id="5_bbh2n"]
+[ext_resource type="AudioStream" uid="uid://dqows2ecj8num" path="res://music/dungeon_01.ogg" id="6_73jny"]
 
 [node name="05" type="Node2D" unique_id=491680236]
 
@@ -62,3 +64,9 @@ target_area_name = "LevelTransition2"
 
 [node name="PlayerSpawn" parent="." unique_id=1200029291 instance=ExtResource("4_rgp3q")]
 position = Vector2(168, 184)
+
+[node name="MusicAutoTrigger" type="Node" parent="." unique_id=1098790462]
+script = ExtResource("5_bbh2n")
+track = ExtResource("6_73jny")
+reverb = 2
+metadata/_custom_type_script = "uid://dbwkno4ka845d"

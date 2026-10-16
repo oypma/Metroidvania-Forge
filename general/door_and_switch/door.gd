@@ -16,7 +16,8 @@ func _ready() -> void:
 			if c.is_open == true:
 				_on_switch_is_open()
 
-func _on_switch_activated() -> void:
+func _on_switch_activated() -> void: 
+	Audio.play_spatial_sound(DOOR_CRASH_AUDIO, global_position)
 	animation_player.play("open")
 
 func _on_switch_is_open() -> void:

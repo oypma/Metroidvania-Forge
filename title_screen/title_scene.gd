@@ -64,6 +64,7 @@ func connect_button_signals() -> void:
 	load_slot_02.pressed.connect(on_load_game_pressed.bind(1))
 	load_slot_03.pressed.connect(on_load_game_pressed.bind(2))
 	tutorial.pressed.connect(show_tutorial)
+	Audio.setup_button_audio(self)
 
 func show_tutorial() -> void:
 	for c in get_children():
