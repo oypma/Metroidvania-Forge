@@ -26,6 +26,7 @@ SaveManager="*uid://fw8pnvj6r7oq"
 Messages="*uid://nvrj685ai6ar"
 PlayerHud="*uid://b23jjjl55rlpk"
 Audio="*uid://ddpypcveqh55p"
+VisualEffects="*uid://bjm6syfy641cv"
 
 [display]
 

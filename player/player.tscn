@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://cfa3xni5hj64u"]
 
-[ext_resource type="Script" uid="uid://bqtolkgx7xbr5" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://bqtolkgx7xbr5" path="res://player/scripts/player.gd" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://claoeryu8s606" path="res://player/states/idle.gd" id="2_rkbax"]
 [ext_resource type="Script" uid="uid://xuiqldltfkcb" path="res://player/states/run.gd" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://n0b4s8y3ob4h" path="res://player/states/jump.gd" id="4_qjkh3"]
 [ext_resource type="Script" uid="uid://b7w46pj6lm8xw" path="res://player/states/fall.gd" id="5_g6k8r"]
 [ext_resource type="Script" uid="uid://c3lkxs6qaq0f0" path="res://player/states/crouch.gd" id="6_g6k8r"]
 [ext_resource type="Texture2D" uid="uid://bfdg8c4c3txn7" path="res://player/sprites/hero.png" id="7_boad6"]
+[ext_resource type="Script" uid="uid://damflw1h82i07" path="res://player/scripts/player_camera.gd" id="8_8t03j"]
 [ext_resource type="Script" uid="uid://bx3tayekn70lj" path="res://player/scripts/input_hints.gd" id="8_hg6s5"]
 [ext_resource type="Texture2D" uid="uid://bwplix10do7r3" path="res://player/sprites/input_icons.png" id="8_rgyib"]
 
@@ -190,6 +191,7 @@ autoplay = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=69164732]
 process_mode = 3
+script = ExtResource("8_8t03j")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=31959986]
 color = Color(1, 0.8, 0.56078434, 1)

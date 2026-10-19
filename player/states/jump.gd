@@ -8,6 +8,7 @@ func init() -> void:
 
 # What happens when this state is entered?
 func enter() -> void:
+	VisualEffects.jump_dust(player.global_position)
 	player.animation_player.play("jump")
 	player.animation_player.pause()
 	#player.add_debug_indicator(Color.LIME_GREEN)

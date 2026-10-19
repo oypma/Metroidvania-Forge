@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tw8c10de10ji"
-path="res://.godot/imported/dust_effects.png-a4e59f3614b76ac3ee5f6cbae51c5ae2.ctex"
+uid="uid://dofhm1kyqansw"
+path="res://.godot/imported/props_destructible.png-f1d05037d5d5fd1767d271e5f5cebf40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ch_04_player_abilities/sprites/dust_effects.png"
-dest_files=["res://.godot/imported/dust_effects.png-a4e59f3614b76ac3ee5f6cbae51c5ae2.ctex"]
+source_file="res://general/sprites/props_destructible.png"
+dest_files=["res://.godot/imported/props_destructible.png-f1d05037d5d5fd1767d271e5f5cebf40.ctex"]
 
 [params]
 
