@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://belj7pnx43aqe" path="res://00_global/health_bar_frame.png" id="1_hv14i"]
 [ext_resource type="Script" uid="uid://c7kumf0aesg1y" path="res://00_global/player_hud/player_hud.gd" id="1_vb1bs"]
+[ext_resource type="Resource" uid="uid://b04r0mjwn3x0r" path="res://00_global/visual_effects/hit_particle_settings/hit_magic_blue.tres" id="3_26715"]
 
 [sub_resource type="Gradient" id="Gradient_p3j8y"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -19,11 +20,14 @@ gradient = SubResource("Gradient_hv14i")
 [sub_resource type="GDScript" id="GDScript_vb1bs"]
 script/source = "extends Button
 
+@export var particle_settings:HitParticleSettings
+
 func _ready() -> void:
 	pressed.connect(_on_pressed)
 
 func _on_pressed() -> void:
-	VisualEffects.camera_shake(10)
+	var pos:Vector2 = get_tree().get_first_node_in_group(\"Player\").global_position
+	VisualEffects.hit_particles(pos, Vector2(0, -1), particle_settings)
 "
 
 [node name="PlayerHud" type="CanvasLayer" unique_id=1521679165]
@@ -77,9 +81,10 @@ texture_progress = SubResource("GradientTexture2D_hv14i")
 
 [node name="Button" type="Button" parent="Control" unique_id=493286108]
 layout_mode = 0
-offset_left = 386.0
-offset_top = 5.0
-offset_right = 475.0
-offset_bottom = 28.0
-text = "Test Shake"
+offset_left = 363.0
+offset_top = 9.0
+offset_right = 471.0
+offset_bottom = 32.0
+text = "Test Particles"
 script = SubResource("GDScript_vb1bs")
+particle_settings = ExtResource("3_26715")
